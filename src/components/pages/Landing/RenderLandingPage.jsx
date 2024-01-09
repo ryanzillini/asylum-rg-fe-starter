@@ -1,8 +1,8 @@
 import React from 'react';
 // ADD IMPORTS BACK FOR GRAPHS SECTION
-// import GrantRatesByOfficeImg from '../../../styles/Images/bar-graph-no-text.png';
-// import GrantRatesByNationalityImg from '../../../styles/Images/pie-chart-no-text.png';
-// import GrantRatesOverTimeImg from '../../../styles/Images/line-graph-no-text.png';
+import GrantRatesByOfficeImg from '../../../styles/Images/bar-graph-no-text.png';
+import GrantRatesByNationalityImg from '../../../styles/Images/pie-chart-no-text.png';
+import GrantRatesOverTimeImg from '../../../styles/Images/line-graph-no-text.png';
 import HrfPhoto from '../../../styles/Images/paper-stack.jpg';
 import '../../../styles/RenderLandingPage.less';
 import { Button } from 'antd';
@@ -32,15 +32,52 @@ function RenderLandingPage(props) {
       </div>
 
       {/* Graphs Section: Add code here for the graphs section for your first ticket */}
-      {/* <div className="graphs-section"> */}
-      <div className="view-more-data-btn-container">
-        <Button
-          type="default"
-          style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
-          onClick={() => history.push('/graphs')}
-        >
-          View the Data
-        </Button>
+      <div className="graphs-section">
+        <div className="graphs-section-office">
+          <img
+            className="graph-image"
+            src={GrantRatesByOfficeImg}
+            alt="bar graph of grants by office"
+          />
+          <p className="graphs-section-caption">Search Grant Rates By Office</p>
+        </div>
+        <div className="graphs-section-nationality">
+          <img
+            className="graph-image"
+            src={GrantRatesByNationalityImg}
+            alt="pie chart of grants by nationality"
+          />
+          <p className="graphs-section-caption">
+            Search Grant Rates By Nationality{' '}
+          </p>
+        </div>
+        <div className="graphs-section-time">
+          <img
+            className="graph-image"
+            src={GrantRatesOverTimeImg}
+            alt="line graph of rates over time"
+          />
+          <p className="graphs-section-caption">Search Grant Rates Over Time</p>
+        </div>
+      </div>
+      <div className="btn-container">
+        <div className="view-more-data-btn-container">
+          <Button
+            type="default"
+            style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
+            onClick={() => history.push('/graphs')}
+          >
+            View the Data
+          </Button>
+        </div>
+        <div className="view-more-data-btn-container">
+          <Button
+            type="default"
+            style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
+          >
+            Download the Data
+          </Button>
+        </div>
       </div>
 
       <div className="middle-section">

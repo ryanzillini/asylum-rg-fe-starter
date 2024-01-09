@@ -24,6 +24,7 @@
     "craco-less": "^1.20.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
+    "nodemon": "^3.0.2",
     "plotly.js": "^1.54.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -48,6 +49,7 @@
     "lint-staged": "^10.2.11",
     "prettier-eslint-cli": "^5.0.0",
     "prompts": "^2.3.2",
+    "tailwindcss": "^3.4.1",
     "yaml": "^1.10.0"
   },
   "eslintConfig": {
@@ -82,7 +84,7 @@
     "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'",
     "lint": "eslint 'src/**/*.{js,jsx}'",
     "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
-    "start": "node start.js",
+    "start": "nodemon start.js",
     "test": "craco test --env=jest-environment-jsdom-sixteen"
   },
   "version": "0.1.0"
