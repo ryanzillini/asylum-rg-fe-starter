@@ -72,6 +72,44 @@
   height: 200px;
 }
 
+h2 {
+  font-size: xx-large;
+  font-family: 'acumin';
+}
+
+.stat-header {
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+  height: 100px;
+  margin-top: 7%;
+}
+
+.statistic-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.stat {
+  width: 22%;
+  text-align: center;
+}
+
+.stat-number {
+  text-align: center;
+}
+
+.read-more-btn-container {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .view-more-data-btn-container {
   height: 44px;
   margin: 0 auto;
@@ -603,7 +641,8 @@
   }
 
   .graphs-section {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
   }
 
