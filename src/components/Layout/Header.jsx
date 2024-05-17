@@ -3,7 +3,7 @@ import { Image } from 'antd';
 import { Link } from 'react-router-dom';
 import Logo from '../../styles/Images/WhiteLogo.png';
 import { colors } from '../../styles/data_vis_colors';
-import Button from 'antd';
+import Button from '../common/Button';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const { primary_accent_color } = colors;
@@ -11,7 +11,7 @@ const { primary_accent_color } = colors;
 function HeaderContent() {
   const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
 
-  const logoutWithRedirect = () => {
+  const LogoutButton = () => {
     logout({
       logoutParams: {
         returnTo: window.location.origin,
@@ -33,8 +33,8 @@ function HeaderContent() {
           <Image width={100} src={Logo} preview={false} alt="HRF logo white" />
         </a>
       </div>
-      <div>
-        <Link to="/" style={{ color: '#E2F0F7', paddingRight: '75px' }}>
+      <div style={{ display: 'flex', gap: '2rem' }}>
+        <Link to="/" style={{ color: '#E2F0F7' }}>
           Home
         </Link>
         <Link to="/graphs" style={{ color: '#E2F0F7' }}>
@@ -42,6 +42,7 @@ function HeaderContent() {
         </Link>
         {!isAuthenticated ? (
           <Button
+            style={{ color: '#E2F0F7' }}
             buttonText="Log In"
             isDisabled={false}
             handleClick={loginWithRedirect}
@@ -54,7 +55,7 @@ function HeaderContent() {
             <Button
               buttonText="Log Out"
               isDisabled={false}
-              handleClick={logoutWithRedirect}
+              handleClick={LogoutButton}
             />
           </>
         )}

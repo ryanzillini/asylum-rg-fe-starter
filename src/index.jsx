@@ -66,7 +66,9 @@ export function App() {
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Route path="/graphs" component={GraphsContainer} />
-        <PrivateRoute path="/profile" component={Profile} />
+        <PrivateRoute path="/profile">
+          <Profile />
+        </PrivateRoute>
         <Route component={NotFoundPage} />
       </Switch>
       <Footer
