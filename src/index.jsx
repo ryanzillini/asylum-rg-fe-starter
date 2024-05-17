@@ -33,10 +33,17 @@ const store = configureStore({ reducer: reducer });
 ReactDOM.render(
   <Router>
     <Provider store={store}>
-      <Auth0Provider></Auth0Provider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <Auth0Provider
+        domain="dev-s4k04kcsctwwy5b2.us.auth0.com"
+        clientId="vjxwF0n6S2tkyNaz0sahmyNDMimZzNAF"
+        authorizationParams={{
+          redirect_uri: window.location.origin,
+        }}
+      >
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Auth0Provider>
     </Provider>
   </Router>,
   document.getElementById('root')
@@ -59,6 +66,7 @@ export function App() {
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Route path="/graphs" component={GraphsContainer} />
+        <PrivateRoute path="/profile" component={Profile} />
         <Route component={NotFoundPage} />
       </Switch>
       <Footer
